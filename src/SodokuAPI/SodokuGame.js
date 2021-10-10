@@ -103,6 +103,10 @@ class SodokuGame {
 
         //console.debug("Finished grouping segments", this.groups);
 
+        this.refreshBoard();
+    }
+
+    refreshBoard() {
         for (let groupKey of Object.keys(this.groups)) {
             let group = this.groups[groupKey];
             const tmpGroupNumbers = new Set();
