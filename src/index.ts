@@ -50,7 +50,7 @@ win.show();
 const game = new SodokuGame(9);
 game.populateBoard(["unsolved", "unsolved", "unsolved", "unsolved", 4, 7, 2, 8, 9, "unsolved", 1, "unsolved", "unsolved", "unsolved", "unsolved", 3, "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", 6, 9, 3, "unsolved", "unsolved", 7, 9, "unsolved", 3, "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", "unsolved", 4, "unsolved", 5, "unsolved", "unsolved", 1, "unsolved", "unsolved", 4, 7, "unsolved", "unsolved", "unsolved", 3, 2, "unsolved", "unsolved", "unsolved", "unsolved", 1, "unsolved", 6, 8, 7, 9, "unsolved", "unsolved", "unsolved", 4, "unsolved", "unsolved", "unsolved", "unsolved", 8, 5, "unsolved", "unsolved", "unsolved", "unsolved"]);
 game.printGroups();
-console.log(game.unsolvedSodokuBlocks);
+console.log("fin");
 
 
 

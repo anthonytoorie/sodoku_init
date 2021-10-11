@@ -111,6 +111,9 @@ class SodokuGame {
             let group = this.groups[groupKey];
             const tmpGroupNumbers = new Set();
 
+            if (!Array.isArray(group)) {
+                group = group.value;
+            }
             for (const sodokuBlock of group) {
                 if (sodokuBlock.isSolved === true) {
                     tmpGroupNumbers.add(sodokuBlock.value);
@@ -124,8 +127,12 @@ class SodokuGame {
 
 
         for (let groupKey of Object.keys(this.groups)) {
-            const group = this.groups[groupKey].value;
+            let group = this.groups[groupKey].value;
             const notAllowedInGroup = this.groups[groupKey].groupNumbersNotAllowed;
+
+            if (!Array.isArray(group)) {
+                group = group.value;
+            }
 
             for (let sodokoBlock of group) {
                 if (sodokoBlock.isSolved === true) {
@@ -170,7 +177,6 @@ class SodokuGame {
     }
 
     get unsolvedSodokuBlocks() {
-        console.debug("Getting unsolved blocks");
         const unsolvedSodokuBlocks = [];
 
         for (let groupKey of Object.keys(this.groups)) {
@@ -184,6 +190,26 @@ class SodokuGame {
         }
 
         return unsolvedSodokuBlocks;
+    }
+
+    get unsolvedSodokuBlocksArrays() {
+        const unsolvedSodokuBlocksArrays = [];
+
+        for (let groupKey of Object.keys(this.groups)) {
+            const group = this.groups[groupKey].value;
+
+            for (let sodokoBlock of group) {
+                if (sodokoBlock.isSolved !== true) {
+                    unsolvedSodokuBlocksArrays.push(sodokoBlock.possibities);
+                }
+            }
+        }
+
+        return unsolvedSodokuBlocksArrays;
+    }
+
+    recurseThroughPossibilities(counter, possibilities) {
+
     }
 
 }
